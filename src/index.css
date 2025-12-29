@@ -354,7 +354,7 @@ main {
   color: #0f3cef;
 }
 
-.backdrop {
+/* .backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -362,7 +362,7 @@ main {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 9;
-}
+} */
 
 .badge {
   margin-left: 0.5rem;
