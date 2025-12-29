@@ -3,16 +3,21 @@ import { createPortal } from 'react-dom';
 
 
 export default function Modal({ title, children, onClose }) {
+
   return createPortal(
     <>
       <div className="backdrop" onClick={onClose} />
       <motion.dialog
+        variants={{
+          hidden: { opacity: 0, y: 30 },
+          visible: { opacity: 1, y: 0 },
+        }}
         open
         className="modal"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial="hidden"
+        animate="visible"
         transition={{ duration: 0.3, ease: 'easeOut' }}
-        exit={{ opacity: 0, y: 30 }}
+        exit="hidden"
       >
         <h2>{title}</h2>
         {children}
