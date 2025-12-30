@@ -44,7 +44,7 @@ export default function NewChallenge({ onDone }) {
 
   return (
     <Modal title="New Challenge" onClose={onDone}>
-      <motion.form id="new-challenge" onSubmit={handleSubmit} ref={scope}>
+      <form id="new-challenge" onSubmit={handleSubmit} ref={scope}>
         <p>
           <label htmlFor="title">Title</label>
           <input ref={title} type="text" name="title" id="title" />
@@ -64,7 +64,6 @@ export default function NewChallenge({ onDone }) {
           id="new-challenge-images"
           variants={{
             visible: { transition: { staggerChildren: 0.1 } },
-            hidden: {}
           }}>
           {images.map((image) => (
             <motion.li
@@ -89,7 +88,7 @@ export default function NewChallenge({ onDone }) {
           </button>
           <button>Add Challenge</button>
         </p>
-      </motion.form>
+      </form>
     </Modal>
   );
 }
